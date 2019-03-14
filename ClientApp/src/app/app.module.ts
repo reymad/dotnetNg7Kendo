@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
+// kendo imports
 import { GridModule } from '@progress/kendo-angular-grid';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { GridModule } from '@progress/kendo-angular-grid';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    // Routing
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
@@ -33,7 +35,7 @@ import { GridModule } from '@progress/kendo-angular-grid';
     GridModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [CounterComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
